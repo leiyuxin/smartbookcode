@@ -3,13 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.leiyuxin.smart4j</groupId>
-	<artifactId>chapter1</artifactId>
+	<artifactId>chapter2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 必须使用war 因为要打包成war在服务器运行 -->
 	<packaging>war</packaging>
-	<name>chapter1</name>
+	<name>chapter2</name>
 	<url>http://maven.apache.org</url>
-
 	<properties>
 		<!--统一源代码的编码方式，否则使用Maven 编译源代码的时候就会出现相关的警告 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,19 +36,22 @@
 			<version>1.2</version>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- SLF4J 使用SLF4J依赖，用于提供日志API,使用Log4J作为实现 使用的是门面模式 为了让 Log4J 起作用，必须在main/resources目录下创建一个名为log4j.properties的文件
-			即使没有加载log4j的jar 也自动下载 -->
+		<!-- SLF4J 使用SLF4J依赖，用于提供日志API,使用Log4J作为实现 使用的是门面模式 为了让
+		Log4J 起作用，必须在main/resources目录下创建一个名为log4j.properties的文件
+		即使没有加载log4j的jar 也自动下载-->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.7</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
