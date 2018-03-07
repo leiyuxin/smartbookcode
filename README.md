@@ -9,7 +9,7 @@ javax.servelt-api 3.1.0  <br/>
 javax.servlet.jsp 2.2<br/>
 jstl 1.2<br/>
 junit 4.11<br/>
-日志slf4j-log4j12 1.7.7<br/>
+slf4j-log4j12 1.7.7<br/>
 mysql 5.1.33 <br/>
 commons-langs 3.3.2<br/>
 commons-dutils 1.6<br/>
