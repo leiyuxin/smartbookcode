@@ -1,4 +1,4 @@
-package org.leiyuxin.smart_framework;
+package org.leiyuxin.smart.framework;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

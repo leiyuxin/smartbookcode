@@ -89,7 +89,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>chapter1</finalName>
+	<!-- 这个名字有争议	<finalName>chapter3</finalName> -->
 		<plugins>
 			<!--Compile JDK版本统一源代码与编译输出的jdk版本，首先eclipse装了对应的JDK版本才行不然会出现警告在Problem标签页里面 -->
 			<plugin>

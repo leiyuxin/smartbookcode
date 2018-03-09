@@ -1,4 +1,4 @@
-package org.leiyuxin.smart_framework;
+package org.leiyuxin.smart.framework;
 
 /**
  * Hello world!

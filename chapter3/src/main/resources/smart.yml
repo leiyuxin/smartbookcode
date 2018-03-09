@@ -1,0 +1,9 @@
+smart:
+  framework:
+    app:
+      base_package: org.smart4j.chapter3
+    jdbc:
+      driver: com.mysql.jdbc.Driver
+      password: root
+      url: jdbc:mysql://localhost:3306/demo
+      username: root
