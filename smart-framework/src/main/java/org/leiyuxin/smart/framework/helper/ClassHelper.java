@@ -10,7 +10,7 @@ import org.leiyuxin.smart.framework.util.ClassUtil;
 /**
  * 类操作助手类
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public final class ClassHelper {

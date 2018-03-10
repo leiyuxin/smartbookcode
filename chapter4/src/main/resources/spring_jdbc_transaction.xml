@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="user" value="root" />
+		<property name="password" value="password" />
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl"
+			value="jdbc:mysql://127.0.0.1:3306/sms?characterEncoding=utf-8" />
+		<property name="initialPoolSize" value="10" />
+		<property name="maxIdleTime" value="100" />
+		<property name="maxPoolSize" value="200" />
+		<property name="minPoolSize" value="10" />
+	</bean>
+	
+	<!-- 配置JDBC数据源的局部事务管理器 -->
+	 <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <!-- 配置事务增强处理Bean，指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+        	<!-- 所有已get开头的方法是只读的 -->
+            <tx:method name="get*" read-only="true"/>
+            <!-- 其他方法使用默认的事务管理器 -->
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+	
+	<!-- AOP配置元素  -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.iflysse.service.impl.*.*(..))" id="txPoint"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
+	</aop:config>
+	
+</beans>
+
+

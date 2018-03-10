@@ -29,7 +29,7 @@ import org.leiyuxin.smart.framework.util.StringUtil;
 /**
  * 文件上传助手类
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public final class UploadHelper {

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 切面代理
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public abstract class AspectProxy implements Proxy {

@@ -10,7 +10,7 @@ import org.leiyuxin.smart.framework.util.ClassUtil;
 /**
  * 加载相应的 Helper 类
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public final class HelperLoader {
@@ -23,8 +23,8 @@ public final class HelperLoader {
             IocHelper.class,
             ControllerHelper.class
         };
-        for (Class<?> cls : classList) {
+       /* for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName());
-        }
+        }*/
     }
 }

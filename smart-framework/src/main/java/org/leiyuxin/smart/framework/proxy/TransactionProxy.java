@@ -9,7 +9,7 @@ import org.leiyuxin.smart.framework.helper.DatabaseHelper;
 /**
  * 事务代理
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public class TransactionProxy implements Proxy {

@@ -8,7 +8,7 @@ import net.sf.cglib.proxy.MethodProxy;
 /**
  * 代理链
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public class ProxyChain {

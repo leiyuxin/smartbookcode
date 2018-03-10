@@ -19,7 +19,7 @@ import org.leiyuxin.smart.framework.proxy.TransactionProxy;*/
 /**
  * 方法拦截助手类
  *
- * @author huangyong
+ * @author leiyuxin
  * @since 1.0.0
  */
 public final class AopHelper {
