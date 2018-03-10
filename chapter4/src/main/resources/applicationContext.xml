@@ -18,14 +18,17 @@
 		扫描 -->
 	<context:component-scan base-package="org.leiyuxin.chapter4.demo" />
 	<bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
-		<property name="interfaces" value="org.leiyuxin.chapter4.demo.aop.Greeting"></property><!-- 需要代理的接口 -->
-		<property name="target" ref="greetingImpl"></property><!--接口实现类 -->
+	<!-- 	<property name="interfaces" value="org.leiyuxin.chapter4.demo.aop.Greeting"></property> --><!-- 需要代理的接口  代理接口只能为一个-->
+		<property name="interfaces" value="org.leiyuxin.chapter4.demo.aop.Apology"></property>
+		<property name="target" ref="greetingImpl"></property><!--接口实现类 或者目标类 -->
 		<property name="interceptorNames"> <!--拦截器的名称 （也就是增强类的名称，Spring Bean 的ID） -->
 			<list>
 				<value>greetingAroundAdvice</value>
 				<value>greetingThrowAdvice</value>
+				<value>greetingIntroAdvice</value><!--引入增强类  -->
 			</list>
 		</property>
+		<property name="proxyTargetClass" value="true"></property> <!--代理目标类（默认为false），代理接口  -->
 	</bean>
 	<!-- <bean id="userDao" class="com.iflysse.dao.impl.UserDaoImpl" > <property
 		name="dataSource" ref="dataSource"></property> </bean> <bean id="userService"
