@@ -33,7 +33,8 @@ public class Client {
 		//引入增强 就是对类的增强
 	    GreetingImpl greeingImp = (GreetingImpl) context.getBean("greetingProxy");
 	    greeingImp.sayHello("jack");
-
+	    greeingImp.goodMorning("早上好");
+	    greeingImp.goodNight("晚上好");
 	    Apology apology = (Apology) greeingImp;
 	    apology.saySorry("Jack");
 

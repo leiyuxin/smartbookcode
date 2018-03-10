@@ -13,6 +13,7 @@ public class GreetingAroundAdvice implements MethodInterceptor {
 		// TODO Auto-generated method stub
 		befor();
 		Object result = invocation.proceed();
+		AOPBeforAfterInfoUtil.info(invocation.getMethod().getName());
 		after();
 		return result;
 	}
