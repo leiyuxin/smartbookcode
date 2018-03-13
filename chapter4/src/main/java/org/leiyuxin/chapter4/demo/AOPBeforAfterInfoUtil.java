@@ -22,4 +22,7 @@ public class AOPBeforAfterInfoUtil {
 		logger.info("info message{}",msg);
 
 	}
+	public static void info(String msg ,Exception e) {
+		logger.info(msg, e);
+	}
 }

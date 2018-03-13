@@ -46,9 +46,11 @@ public class Client {
 		//使用AspectJ+spring
 		ApplicationContext contextAspectJ = new ClassPathXmlApplicationContext("AspectJ.xml");
 
-		GreetingImpl greeingImpS = (GreetingImpl) contextAspectJ.getBean(GreetingImpl.class);
+		GreetingImpl greeingImpS = (GreetingImpl) contextAspectJ.getBean("greetingImpl");
 		greeingImpS.sayHello("jack");
 		greeingImpS.goodMorning("早上好");
 		greeingImpS.goodNight("晚上好");
+		Apology apology = (Apology) greeingImpS;
+		apology.saySorry("Jack");
 	}
 }
